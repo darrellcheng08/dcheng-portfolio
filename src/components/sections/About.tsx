@@ -30,7 +30,7 @@ export function About() {
 										<p className="text-sm text-mute">
 											{item.school} · {item.location}
 										</p>
-										<p className="mt-1 font-mono text-xs text-teal">{item.period}</p>
+										<p className="mt-1 font-mono text-xs text-accent">{item.period}</p>
 									</div>
 								))}
 							</div>
@@ -71,7 +71,7 @@ export function About() {
 					{personalProjects.map((project, index) => (
 						<Reveal key={project.name} delay={index * 0.06}>
 							<article className="glass-card h-full rounded-2xl p-6">
-								<p className="font-mono text-xs text-teal">{project.period}</p>
+								<p className="font-mono text-xs text-accent">{project.period}</p>
 								<h4 className="mt-2 font-semibold text-ink">{project.name}</h4>
 								<p className="mt-2 text-sm text-mute">{project.summary}</p>
 							</article>

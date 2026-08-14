@@ -8,28 +8,69 @@
 	}
 
 	body {
-		background-color: #0b1220;
-		color: #e7eef8;
+		background-color: #070412;
+		color: #f4f0ff;
 		@apply font-sans text-base leading-relaxed antialiased;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
 
 	::selection {
-		background-color: rgb(45 212 191 / 0.25);
-		color: #e7eef8;
+		background-color: rgb(167 139 250 / 0.3);
+		color: #f4f0ff;
 	}
 }
 
 @layer components {
+	.space-bg {
+		background-color: #070412;
+		background-image:
+			radial-gradient(ellipse 90% 70% at 50% -10%, rgba(80, 22, 138, 0.55), transparent 55%),
+			radial-gradient(ellipse 60% 50% at 80% 40%, rgba(124, 58, 237, 0.18), transparent 50%),
+			radial-gradient(ellipse 50% 40% at 15% 70%, rgba(91, 33, 182, 0.2), transparent 45%),
+			radial-gradient(ellipse 100% 80% at 50% 100%, rgba(30, 10, 60, 0.8), #070412);
+	}
+
+	.stars {
+		background-image:
+			radial-gradient(1px 1px at 20px 30px, rgba(255, 255, 255, 0.9), transparent),
+			radial-gradient(1px 1px at 80px 120px, rgba(255, 255, 255, 0.7), transparent),
+			radial-gradient(1.5px 1.5px at 160px 60px, rgba(255, 255, 255, 0.85), transparent),
+			radial-gradient(1px 1px at 240px 180px, rgba(255, 255, 255, 0.55), transparent),
+			radial-gradient(1px 1px at 320px 90px, rgba(255, 255, 255, 0.8), transparent),
+			radial-gradient(1.5px 1.5px at 400px 220px, rgba(255, 255, 255, 0.65), transparent),
+			radial-gradient(1px 1px at 40px 260px, rgba(255, 255, 255, 0.5), transparent),
+			radial-gradient(1px 1px at 200px 300px, rgba(255, 255, 255, 0.75), transparent),
+			radial-gradient(1px 1px at 360px 40px, rgba(255, 255, 255, 0.6), transparent),
+			radial-gradient(1.5px 1.5px at 120px 200px, rgba(255, 255, 255, 0.9), transparent),
+			radial-gradient(1px 1px at 280px 280px, rgba(255, 255, 255, 0.45), transparent),
+			radial-gradient(1px 1px at 60px 160px, rgba(255, 255, 255, 0.7), transparent);
+		background-size: 420px 340px;
+		opacity: 0.55;
+	}
+
+	.stars-dense {
+		background-image:
+			radial-gradient(1px 1px at 10px 50px, rgba(255, 255, 255, 0.5), transparent),
+			radial-gradient(1px 1px at 90px 20px, rgba(255, 255, 255, 0.4), transparent),
+			radial-gradient(1px 1px at 150px 140px, rgba(255, 255, 255, 0.55), transparent),
+			radial-gradient(1px 1px at 210px 80px, rgba(255, 255, 255, 0.35), transparent),
+			radial-gradient(1px 1px at 270px 170px, rgba(255, 255, 255, 0.5), transparent),
+			radial-gradient(1px 1px at 330px 30px, rgba(255, 255, 255, 0.45), transparent),
+			radial-gradient(1px 1px at 50px 190px, rgba(255, 255, 255, 0.3), transparent),
+			radial-gradient(1px 1px at 190px 220px, rgba(255, 255, 255, 0.4), transparent);
+		background-size: 360px 250px;
+		opacity: 0.4;
+	}
+
 	.glass-card {
-		background: rgb(17 26 43 / 0.72);
-		border: 1px solid rgb(45 212 191 / 0.12);
+		background: rgb(18 10 36 / 0.65);
+		border: 1px solid rgb(167 139 250 / 0.18);
 		backdrop-filter: blur(18px);
 	}
 
 	.section-rule {
-		background: linear-gradient(90deg, transparent, rgb(45 212 191 / 0.35), transparent);
+		background: linear-gradient(90deg, transparent, rgb(167 139 250 / 0.45), transparent);
 		height: 1px;
 	}
 }

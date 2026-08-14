@@ -16,8 +16,8 @@ export function Experience() {
 						<Reveal key={`${role.company}-${role.title}`} delay={index * 0.06}>
 							<article className="grid gap-4 pl-10 md:grid-cols-[200px_1fr] md:gap-10 md:pl-12">
 								<div className="relative">
-									<span className="absolute -left-10 top-1.5 h-2.5 w-2.5 rounded-full border-2 border-teal bg-navy md:-left-12" />
-									<p className="font-mono text-xs text-teal">{role.period}</p>
+									<span className="absolute -left-10 top-1.5 h-2.5 w-2.5 rounded-full border-2 border-accent bg-navy md:-left-12" />
+									<p className="font-mono text-xs text-accent">{role.period}</p>
 									<p className="mt-1 text-sm text-mute">{role.location}</p>
 								</div>
 								<div className="glass-card rounded-2xl p-6">
@@ -27,7 +27,7 @@ export function Experience() {
 									<ul className="mt-4 space-y-2 text-sm text-mute">
 										{role.highlights.map((item) => (
 											<li key={item} className="flex gap-2">
-												<span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-teal" />
+												<span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
 												<span>{item}</span>
 											</li>
 										))}

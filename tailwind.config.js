@@ -5,23 +5,24 @@ export default {
 		extend: {
 			colors: {
 				navy: {
-					DEFAULT: "#0b1220",
+					DEFAULT: "#070412",
 				},
 				panel: {
-					DEFAULT: "#111a2b",
+					DEFAULT: "#120a24",
 				},
 				ink: {
-					DEFAULT: "#e7eef8",
+					DEFAULT: "#f4f0ff",
 				},
 				mute: {
-					DEFAULT: "#93a4bb",
+					DEFAULT: "#b7a8d4",
 				},
 				line: {
-					DEFAULT: "#1c2a40",
+					DEFAULT: "#2a1b4a",
 				},
-				teal: {
-					DEFAULT: "#2dd4bf",
-					dim: "#14b8a6",
+				accent: {
+					DEFAULT: "#c4b5fd",
+					soft: "#a78bfa",
+					dim: "#8b5cf6",
 				},
 			},
 			fontFamily: {

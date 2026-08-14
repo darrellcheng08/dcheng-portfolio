@@ -10,13 +10,13 @@ export function Hero() {
 			<div className="mx-auto max-w-6xl">
 				<motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
 					<p className="text-sm font-medium text-ink md:text-base">{profile.title}</p>
-					<span className="w-fit rounded-full border border-teal/30 bg-teal/10 px-3 py-1 text-sm font-medium text-teal">
+					<span className="w-fit rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-sm font-medium text-accent">
 						{profile.yearsExperience} years experience
 					</span>
 				</motion.div>
 
 				<motion.h1 initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.08 }} className="mt-4 max-w-4xl text-5xl font-semibold tracking-tight text-ink sm:text-6xl md:text-7xl">
-					{profile.firstName} <span className="text-teal">{profile.lastName}</span>
+					{profile.firstName} <span className="text-accent">{profile.lastName}</span>
 				</motion.h1>
 
 				<motion.p initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.16 }} className="mt-6 max-w-2xl text-lg leading-8 text-mute md:text-xl">
@@ -24,16 +24,16 @@ export function Hero() {
 				</motion.p>
 
 				<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.24 }} className="mt-5 flex items-center gap-1.5 text-sm text-mute">
-					<MapPin size={14} className="text-teal" />
+					<MapPin size={14} className="text-accent" />
 					{profile.location}
 				</motion.div>
 
 				<motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.32 }} className="mt-8 flex flex-wrap gap-3">
-					<a href="#work" className="inline-flex items-center gap-2 rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-navy transition hover:bg-teal-dim">
+					<a href="#work" className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-5 py-2.5 text-sm font-semibold text-white shadow-[0_0_24px_rgb(139_92_246_/_0.45)] transition hover:bg-accent-dim">
 						View work
 						<ArrowDownRight size={16} />
 					</a>
-					<a href="#contact" className="inline-flex items-center rounded-full border border-line px-5 py-2.5 text-sm font-medium text-ink transition hover:border-teal hover:text-teal">
+					<a href="#contact" className="inline-flex items-center rounded-full border border-white/25 bg-white/5 px-5 py-2.5 text-sm font-medium text-ink transition hover:border-accent hover:text-accent">
 						Contact
 					</a>
 					<SocialLinks />

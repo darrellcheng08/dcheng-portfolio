@@ -28,18 +28,18 @@ export function Projects() {
 							viewport={{ once: true, margin: "-40px" }}
 							transition={{ duration: 0.5, delay: index * 0.08 }}
 							whileHover={{ y: -6 }}
-							className="glass-card group rounded-2xl p-6 shadow-[0_20px_50px_-28px_rgb(45_212_191_/_0.35)] transition md:p-8"
+							className="glass-card group rounded-2xl p-6 shadow-[0_20px_50px_-28px_rgb(167_139_250_/_0.35)] transition md:p-8"
 						>
-							<p className="font-mono text-xs text-teal">
+							<p className="font-mono text-xs text-accent">
 								{project.company} · {project.period}
 							</p>
-							<h3 className="mt-3 text-2xl font-semibold text-ink group-hover:text-teal">{project.name}</h3>
+							<h3 className="mt-3 text-2xl font-semibold text-ink group-hover:text-accent">{project.name}</h3>
 							<p className="mt-1 text-sm text-mute">{project.role}</p>
 							<p className="mt-4 text-mute">{project.summary}</p>
 							<ul className="mt-5 space-y-2 text-sm text-mute">
 								{project.impact.slice(0, 4).map((item) => (
 									<li key={item} className="flex gap-2">
-										<span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-teal" />
+										<span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
 										<span>{item}</span>
 									</li>
 								))}
@@ -54,7 +54,7 @@ export function Projects() {
 				</div>
 
 				<Reveal>
-					<h3 className="mb-6 mt-14 font-mono text-xs tracking-[0.2em] text-teal">More projects</h3>
+					<h3 className="mb-6 mt-14 font-mono text-xs tracking-[0.2em] text-accent">More projects</h3>
 				</Reveal>
 				<div className="grid gap-6 md:grid-cols-3">
 					{rest.map((project, index) => (
@@ -67,7 +67,7 @@ export function Projects() {
 							whileHover={{ y: -6 }}
 							className="glass-card rounded-2xl p-6 transition"
 						>
-							<p className="font-mono text-xs text-teal">{project.company}</p>
+							<p className="font-mono text-xs text-accent">{project.company}</p>
 							<h3 className="mt-2 text-lg font-semibold text-ink">{project.name}</h3>
 							<p className="mt-1 text-xs text-mute">{project.role}</p>
 							<p className="mt-3 text-sm text-mute">{project.summary}</p>

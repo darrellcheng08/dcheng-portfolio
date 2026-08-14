@@ -17,7 +17,7 @@ export function SocialLinks({ className = "", iconSize = 18 }: SocialLinksProps)
 			{links.map((link) => {
 				const Icon = link.icon;
 				return (
-					<a key={link.href} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label} className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-mute transition hover:border-teal hover:text-teal">
+					<a key={link.href} href={link.href} target="_blank" rel="noreferrer" aria-label={link.label} className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-line text-mute transition hover:border-accent hover:text-accent">
 						<Icon size={iconSize} />
 					</a>
 				);

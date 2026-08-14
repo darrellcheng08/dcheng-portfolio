@@ -47,13 +47,13 @@ export function Header() {
 		<header className={`fixed inset-x-0 top-0 z-50 transition-colors ${scrolled || open ? "border-b border-line bg-navy/80 backdrop-blur-xl" : "bg-transparent"}`}>
 			<div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:h-[4.25rem] md:px-8">
 				<a href="#top" className="flex items-center gap-2.5 font-semibold text-ink">
-					<span className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-teal/60 bg-teal/10 font-mono text-xs text-teal">DC</span>
+					<span className="inline-flex h-8 w-8 items-center justify-center rounded-lg border border-accent/60 bg-accent/10 font-mono text-xs text-accent">DC</span>
 					<span className="hidden sm:inline">{profile.name}</span>
 				</a>
 
 				<nav className="hidden items-center gap-7 text-sm md:flex">
 					{navItems.map((item) => (
-						<a key={item.href} href={item.href} className={`transition-colors ${active === item.href ? "text-teal" : "text-mute hover:text-ink"}`}>
+						<a key={item.href} href={item.href} className={`transition-colors ${active === item.href ? "text-accent" : "text-mute hover:text-ink"}`}>
 							{item.label}
 						</a>
 					))}
