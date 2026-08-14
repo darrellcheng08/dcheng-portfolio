@@ -1,5 +1,7 @@
+import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Tag } from "@/components/ui/Tag";
+import { Reveal } from "@/components/ui/Reveal";
 import { projects } from "@/data/content";
 
 export function Projects() {
@@ -7,61 +9,76 @@ export function Projects() {
 	const rest = projects.filter((p) => !p.featured);
 
 	return (
-		<section id="work" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
-			<SectionHeading index="01" eyebrow="Selected work" title="Products I still own in production." description="Two flagship platforms — a multi-tenant graphics order system and a real-estate SPA with live Chat AI — plus the integrations around them." />
+		<section id="work" className="px-5 py-20 md:px-8 md:py-24">
+			<div className="mx-auto max-w-6xl">
+				<Reveal>
+					<SectionHeading
+						kicker="01 — Work"
+						title="Featured Projects"
+						description="Standout work: platforms I lead in production for craft, reliability, and impact."
+					/>
+				</Reveal>
 
-			<div className="space-y-6">
-				{featured.map((project) => (
-					<article key={project.id} className="border border-paper-50/10 bg-ink-900 p-6 sm:p-10">
-						<div className="flex flex-wrap items-start justify-between gap-4">
-							<div>
-								<p className="font-mono text-[11px] uppercase tracking-[0.2em] text-copper-400">
-									{project.company} · {project.period}
-								</p>
-								<h3 className="mt-3 font-display text-3xl text-paper-50 sm:text-4xl">{project.name}</h3>
-								<p className="mt-1 text-sm text-paper-400">{project.role}</p>
+				<div className="grid gap-6 lg:grid-cols-2">
+					{featured.map((project, index) => (
+						<motion.article
+							key={project.id}
+							initial={{ opacity: 0, y: 24 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, margin: "-40px" }}
+							transition={{ duration: 0.5, delay: index * 0.08 }}
+							whileHover={{ y: -6 }}
+							className="glass-card group rounded-2xl p-6 shadow-[0_20px_50px_-28px_rgb(45_212_191_/_0.35)] transition md:p-8"
+						>
+							<p className="font-mono text-xs text-teal">
+								{project.company} · {project.period}
+							</p>
+							<h3 className="mt-3 text-2xl font-semibold text-ink group-hover:text-teal">{project.name}</h3>
+							<p className="mt-1 text-sm text-mute">{project.role}</p>
+							<p className="mt-4 text-mute">{project.summary}</p>
+							<ul className="mt-5 space-y-2 text-sm text-mute">
+								{project.impact.slice(0, 4).map((item) => (
+									<li key={item} className="flex gap-2">
+										<span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-teal" />
+										<span>{item}</span>
+									</li>
+								))}
+							</ul>
+							<div className="mt-6 flex flex-wrap gap-1.5">
+								{project.stack.slice(0, 8).map((tech) => (
+									<Tag key={tech}>{tech}</Tag>
+								))}
 							</div>
-						</div>
-						<p className="mt-6 max-w-3xl text-base leading-relaxed text-paper-200">{project.summary}</p>
-						<p className="mt-4 max-w-3xl text-sm leading-relaxed text-paper-400">{project.problem}</p>
-						<ul className="mt-8 space-y-3">
-							{project.impact.map((item) => (
-								<li key={item} className="flex gap-3 text-sm leading-relaxed text-paper-100">
-									<span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-copper-400" />
-									{item}
-								</li>
-							))}
-						</ul>
-						<div className="mt-8 flex flex-wrap gap-2">
-							{project.stack.map((tech) => (
-								<Tag key={tech}>{tech}</Tag>
-							))}
-						</div>
-					</article>
-				))}
-			</div>
+						</motion.article>
+					))}
+				</div>
 
-			<div className="mt-6 grid gap-6 lg:grid-cols-3">
-				{rest.map((project) => (
-					<article key={project.id} className="flex flex-col border border-paper-50/10 bg-ink-900 p-6">
-						<p className="font-mono text-[10px] uppercase tracking-[0.2em] text-copper-400">{project.company}</p>
-						<h3 className="mt-3 font-display text-2xl text-paper-50">{project.name}</h3>
-						<p className="mt-1 text-xs text-paper-400">{project.role}</p>
-						<p className="mt-4 flex-1 text-sm leading-relaxed text-paper-200">{project.summary}</p>
-						<ul className="mt-5 space-y-2">
-							{project.impact.map((item) => (
-								<li key={item} className="text-xs leading-relaxed text-paper-400">
-									— {item}
-								</li>
-							))}
-						</ul>
-						<div className="mt-6 flex flex-wrap gap-2">
-							{project.stack.map((tech) => (
-								<Tag key={tech}>{tech}</Tag>
-							))}
-						</div>
-					</article>
-				))}
+				<Reveal>
+					<h3 className="mb-6 mt-14 font-mono text-xs tracking-[0.2em] text-teal">More projects</h3>
+				</Reveal>
+				<div className="grid gap-6 md:grid-cols-3">
+					{rest.map((project, index) => (
+						<motion.article
+							key={project.id}
+							initial={{ opacity: 0, y: 24 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true, margin: "-40px" }}
+							transition={{ duration: 0.5, delay: index * 0.08 }}
+							whileHover={{ y: -6 }}
+							className="glass-card rounded-2xl p-6 transition"
+						>
+							<p className="font-mono text-xs text-teal">{project.company}</p>
+							<h3 className="mt-2 text-lg font-semibold text-ink">{project.name}</h3>
+							<p className="mt-1 text-xs text-mute">{project.role}</p>
+							<p className="mt-3 text-sm text-mute">{project.summary}</p>
+							<div className="mt-4 flex flex-wrap gap-1.5">
+								{project.stack.slice(0, 5).map((tech) => (
+									<Tag key={tech}>{tech}</Tag>
+								))}
+							</div>
+						</motion.article>
+					))}
+				</div>
 			</div>
 		</section>
 	);

@@ -8,16 +8,28 @@
 	}
 
 	body {
-		@apply bg-ink-950 font-sans text-paper-50 antialiased;
+		background-color: #0b1220;
+		color: #e7eef8;
+		@apply font-sans text-base leading-relaxed antialiased;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
 	}
 
 	::selection {
-		@apply bg-copper-500/80 text-ink-950;
+		background-color: rgb(45 212 191 / 0.25);
+		color: #e7eef8;
 	}
 }
 
-@layer utilities {
-	.grain {
-		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/%3E%3C/svg%3E");
+@layer components {
+	.glass-card {
+		background: rgb(17 26 43 / 0.72);
+		border: 1px solid rgb(45 212 191 / 0.12);
+		backdrop-filter: blur(18px);
+	}
+
+	.section-rule {
+		background: linear-gradient(90deg, transparent, rgb(45 212 191 / 0.35), transparent);
+		height: 1px;
 	}
 }

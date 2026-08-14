@@ -9,11 +9,14 @@ export const profile = {
 	email: "cheng.darrell12@gmail.com",
 	phone: "0926 466 8713",
 	phoneHref: "tel:+639264668713",
-	resumeUrl: "/Darrell_Cheng_Resume.pdf",
-	availability: "Building production systems at Hammerulo and ADVSR.ai",
+	github: "https://github.com/darrellcheng08",
+	linkedin: "https://www.linkedin.com/in/darrell-c-501a26124/",
+	yearsExperience: "8+",
+	intro:
+		"Full-stack developer with broad experience across PHP, Laravel, React, Vue, TypeScript, Python, and AWS. I lead teams on production systems — multi-tenant platforms, shipping and AI integrations, and DevOps — from first setup through deployment and maintenance.",
 	tagline: "I lead full-stack delivery — from multi-tenant order platforms and shipping APIs to AI that answers questions against live databases.",
 	summary:
-		"Senior full-stack developer and team lead with 7+ years shipping Laravel, Vue, React, and TypeScript systems. I take products from setup through automation: code review, integrations (OpenAI, MCP, Stripe, Shopify, UPS / DHL / FedEx), and AWS infrastructure. Currently leading Windows & Walls at Hammerulo Data Corporation and the React + Chat AI rebuild at ADVSR.ai.",
+		"Senior full-stack developer and team lead with 8+ years building Laravel, Vue, React, and TypeScript systems — plus DevOps: GitHub CI/CD, Docker, Cloudflare, and AWS. I take products from setup through automation: code review, integrations (OpenAI, MCP, Stripe, Shopify, UPS / DHL / FedEx), and infrastructure. Currently leading Windows & Walls at Hammerulo Data Corporation, and supporting ADVSR.ai with bug fixes and UI improvements.",
 	languages: ["English", "Tagalog"],
 	interests: ["AI", "Cloud computing", "Stock market", "DevOps"],
 } as const;
@@ -43,11 +46,11 @@ export const skillGroups: SkillGroup[] = [
 	},
 	{
 		title: "Practice",
-		items: ["GitHub", "Bitbucket", "Jira", "Code review", "Team lead", "Query optimization", "OAuth", "Jasper Reports", "Laravel Excel"],
+		items: ["GitHub Actions / CI/CD", "GitHub", "Bitbucket", "Jira", "Code review", "Team lead", "Query optimization", "OAuth", "Jasper Reports", "Laravel Excel"],
 	},
 ];
 
-export const marqueeSkills = ["PHP", "Laravel", "TypeScript", "React.js", "Vue.js", "Node.js", "Python", "Docker", "AWS", "Cloudflare", "OpenAI", "MCP", "Stripe", "Shopify", "UPS", "DHL", "FedEx", "SharePoint"];
+export const marqueeSkills = ["PHP", "Laravel", "TypeScript", "React.js", "Vue.js", "Node.js", "Python", "Docker", "AWS", "Cloudflare", "GitHub Actions", "OpenAI", "MCP", "Stripe", "Shopify", "UPS", "DHL", "FedEx", "SharePoint"];
 
 export const experience: ExperienceRole[] = [
 	{
@@ -70,15 +73,17 @@ export const experience: ExperienceRole[] = [
 		company: "ADVSR.ai",
 		title: "Senior Full-Stack Developer & Team Lead",
 		period: "Nov 2024 — Present",
-		location: "Part-time",
-		summary: "Part-time lead on a real-estate agent platform: sign-up, properties, ambassador collaboration, Stripe subscriptions, and a Chat AI that returns live data. I review code and manage one developer.",
+		location: "Part-time · on-call",
+		summary: "Part-time lead on a real-estate agent platform: sign-up, properties, ambassador collaboration, Stripe subscriptions, and a Chat AI that returns live data. I shipped the React rebuild and DevOps stack (GitHub CI/CD, Docker, Cloudflare, AWS) and still support the site on-call for bugs and UI improvements.",
 		highlights: [
 			"Started on bug fixes and performance, then converted Laravel Blade pages to React, TypeScript, Tailwind, and Vite — set up by hand before AI coding tools were the default.",
 			"Implemented Figma-to-React UI redesigns across member and public pages.",
 			"Built Chat AI with OpenAI, MCP (MariaDB connector), ChromaDB/vector cache, and RDS so questions about agents, properties, ambassadors, countries, and sales return real database results.",
+			"Stood up GitHub CI/CD, Docker containers for consistent deploy and maintenance, Cloudflare for edge security, and AWS (EC2, RDS, S3, CloudFront) for compute, database, media, and CDN.",
 			"Lead: code review, PR approval, and delivery with one developer.",
+			"Still on the team on-call: bug fixes and UI improvements as they come in.",
 		],
-		stack: ["Laravel", "React.js", "TypeScript", "Tailwind", "Vite", "OpenAI", "MCP", "ChromaDB", "MariaDB", "Stripe"],
+		stack: ["Laravel", "React.js", "TypeScript", "Tailwind", "Vite", "OpenAI", "MCP", "ChromaDB", "Docker", "GitHub Actions", "Cloudflare", "AWS", "Stripe"],
 	},
 	{
 		company: "Teratomo Corporation",
@@ -117,7 +122,7 @@ export const projects: Project[] = [
 		period: "2021 — Present",
 		company: "Hammerulo Data Corporation",
 		featured: true,
-		summary: "Multi-tenant platform for ordering window, door, and vehicle graphics. Sales capture the job; a custom diagram builder I built models the glass or body; then the order moves through design, production, and shipping with installers on site.",
+		summary: "A multi-brand ordering platform for store-window, door, and vehicle graphics. Sales use a diagram builder I built to map each job, then the order moves through design, production, shipping, and on-site installation.",
 		problem: "Brand programs (Coca-Cola, Monster, and similar) needed a single place to order store-window and vehicle graphics, with tenant isolation, an approval pipeline, carrier rates, and Photoshop-ready art for designers.",
 		impact: [
 			"Diagram builder: multiple windows, doors, car glass or body — attach art styles and dimensions so sales can order without a designer in the room.",
@@ -131,19 +136,21 @@ export const projects: Project[] = [
 	{
 		id: "advsr",
 		name: "ADVSR.ai",
-		role: "Team lead · platform rebuild & Chat AI",
+		role: "Team lead · platform rebuild, Chat AI & DevOps",
 		period: "2024 — Present",
 		company: "ADVSR.ai",
 		featured: true,
-		summary: "Real-estate agent network: sign-up, listings, ambassador collaboration, Stripe billing, and a Chat AI that queries live MariaDB through MCP — not canned FAQs.",
-		problem: "The product ran on slow Laravel Blade pages. Agents needed a faster SPA and a way to ask natural-language questions about agents, properties, ambassadors, and sales against real data.",
+		summary: "A real-estate platform for agents to sign up, list properties, collaborate with ambassadors, and manage Stripe subscriptions. I rebuilt the app in React, added a Chat AI that answers with live database data, and set up CI/CD, Docker, Cloudflare, and AWS.",
+		problem: "The product ran on slow Laravel Blade pages. Agents needed a faster SPA, live-data Chat AI, and a production stack with CI/CD, containers, CDN, and edge security — not a laptop deploy.",
 		impact: [
 			"Migrated Blade → React + TypeScript + Tailwind + Vite (manual setup, then Figma-faithful UI).",
 			"Chat AI: question → OpenAI → SQL via MCP → MariaDB; ChromaDB/vector for cache and fast retrieval.",
 			"Live answers for agents, properties, ambassadors, top countries, and sales.",
+			"DevOps: GitHub Actions CI/CD, Docker containers for maintainable deploys, Cloudflare for security, AWS EC2 (app), RDS (MariaDB), S3 (media), CloudFront (CDN).",
 			"Lead for one developer: review, PRs, and delivery after an initial bug-fix / performance pass.",
+			"Ongoing: on-call for bugs and UI improvements.",
 		],
-		stack: ["Laravel", "React.js", "TypeScript", "Tailwind", "Vite", "OpenAI", "MCP", "ChromaDB", "MariaDB / RDS", "Stripe"],
+		stack: ["Laravel", "React.js", "TypeScript", "Tailwind", "Vite", "OpenAI", "MCP", "ChromaDB", "Docker", "GitHub Actions", "Cloudflare", "EC2", "RDS", "S3", "CloudFront", "Stripe"],
 	},
 	{
 		id: "hirehelpr",

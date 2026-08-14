@@ -26,7 +26,6 @@ Copy and experience live in one file so the UI stays dumb:
 | `src/types/index.ts` | Shapes for that data |
 | `src/components/sections/` | Page sections |
 | `src/components/layout/` | Header / footer |
-| `public/Darrell_Cheng_Resume.pdf` | Downloadable resume |
 
 ## Go live (recommended)
 

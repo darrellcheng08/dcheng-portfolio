@@ -4,49 +4,29 @@ export default {
 	theme: {
 		extend: {
 			colors: {
+				navy: {
+					DEFAULT: "#0b1220",
+				},
+				panel: {
+					DEFAULT: "#111a2b",
+				},
 				ink: {
-					950: "#080807",
-					900: "#0e0d0b",
-					800: "#161512",
-					700: "#1f1d19",
-					600: "#2c2923",
+					DEFAULT: "#e7eef8",
 				},
-				paper: {
-					50: "#f7f3eb",
-					100: "#ece6d9",
-					200: "#cfc6b4",
-					400: "#9a917f",
-					500: "#7a7364",
+				mute: {
+					DEFAULT: "#93a4bb",
 				},
-				copper: {
-					300: "#e8b86d",
-					400: "#d4a017",
-					500: "#c9892a",
-					600: "#b06a1a",
+				line: {
+					DEFAULT: "#1c2a40",
+				},
+				teal: {
+					DEFAULT: "#2dd4bf",
+					dim: "#14b8a6",
 				},
 			},
 			fontFamily: {
-				display: ["Instrument Serif", "Georgia", "serif"],
-				sans: ["Outfit", "system-ui", "sans-serif"],
+				sans: ["DM Sans", "system-ui", "sans-serif"],
 				mono: ["IBM Plex Mono", "ui-monospace", "monospace"],
-			},
-			boxShadow: {
-				glow: "0 0 80px -20px rgba(201, 137, 42, 0.35)",
-			},
-			backgroundImage: {
-				grid: "linear-gradient(to right, rgba(247,243,235,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(247,243,235,0.04) 1px, transparent 1px)",
-			},
-			backgroundSize: {
-				grid: "56px 56px",
-			},
-			animation: {
-				marquee: "marquee 32s linear infinite",
-			},
-			keyframes: {
-				marquee: {
-					"0%": { transform: "translateX(0)" },
-					"100%": { transform: "translateX(-50%)" },
-				},
 			},
 		},
 	},

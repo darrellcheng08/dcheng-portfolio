@@ -1,39 +1,62 @@
-import { ArrowUpRight, Download, Mail, Phone } from "lucide-react";
+import { Github, Linkedin, Mail, Phone } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Reveal } from "@/components/ui/Reveal";
 import { profile } from "@/data/content";
 
 export function Contact() {
 	return (
-		<section id="contact" className="mx-auto max-w-6xl px-5 py-24 sm:px-8 sm:py-32">
-			<SectionHeading index="05" eyebrow="Contact" title="If the work sounds like yours, write." description="Best by email. Resume is a PDF on this site." />
+		<section id="contact" className="px-5 py-20 md:px-8 md:py-24">
+			<div className="mx-auto max-w-6xl">
+				<Reveal>
+					<SectionHeading kicker="05 — Contact" title="Let’s work together" description="Email is best." />
+				</Reveal>
 
-			<div className="grid gap-6 sm:grid-cols-2">
-				<a href={`mailto:${profile.email}`} className="group flex items-start justify-between border border-paper-50/10 bg-ink-900 p-6 transition-colors hover:border-copper-500/60">
-					<div>
-						<p className="font-mono text-[11px] uppercase tracking-[0.2em] text-copper-400">Email</p>
-						<p className="mt-3 text-lg text-paper-50">{profile.email}</p>
+				<div className="grid gap-6 sm:grid-cols-2">
+					<Reveal>
+						<a href={`mailto:${profile.email}`} className="glass-card group flex items-start justify-between rounded-2xl p-6 transition hover:border-teal/40">
+							<div>
+								<p className="font-mono text-xs text-teal">Email</p>
+								<p className="mt-2 text-lg text-ink">{profile.email}</p>
+							</div>
+							<Mail className="text-mute transition group-hover:text-teal" size={20} />
+						</a>
+					</Reveal>
+					<Reveal delay={0.08}>
+						<a href={profile.phoneHref} className="glass-card group flex items-start justify-between rounded-2xl p-6 transition hover:border-teal/40">
+							<div>
+								<p className="font-mono text-xs text-teal">Phone</p>
+								<p className="mt-2 text-lg text-ink">{profile.phone}</p>
+							</div>
+							<Phone className="text-mute transition group-hover:text-teal" size={20} />
+						</a>
+					</Reveal>
+					<Reveal delay={0.12}>
+						<a href={profile.github} target="_blank" rel="noreferrer" className="glass-card group flex items-start justify-between rounded-2xl p-6 transition hover:border-teal/40">
+							<div>
+								<p className="font-mono text-xs text-teal">GitHub</p>
+								<p className="mt-2 text-lg text-ink">darrellcheng08</p>
+							</div>
+							<Github className="text-mute transition group-hover:text-teal" size={20} />
+						</a>
+					</Reveal>
+					<Reveal delay={0.16}>
+						<a href={profile.linkedin} target="_blank" rel="noreferrer" className="glass-card group flex items-start justify-between rounded-2xl p-6 transition hover:border-teal/40">
+							<div>
+								<p className="font-mono text-xs text-teal">LinkedIn</p>
+								<p className="mt-2 text-lg text-ink">Darrell Cheng</p>
+							</div>
+							<Linkedin className="text-mute transition group-hover:text-teal" size={20} />
+						</a>
+					</Reveal>
+				</div>
+
+				<Reveal>
+					<div className="mt-8">
+						<a href={`mailto:${profile.email}?subject=Hello%20Darrell`} className="inline-flex rounded-full bg-teal px-5 py-2.5 text-sm font-semibold text-navy transition hover:bg-teal-dim">
+							Send an email
+						</a>
 					</div>
-					<Mail className="text-paper-400 transition-colors group-hover:text-copper-300" size={20} />
-				</a>
-
-				<a href={profile.phoneHref} className="group flex items-start justify-between border border-paper-50/10 bg-ink-900 p-6 transition-colors hover:border-copper-500/60">
-					<div>
-						<p className="font-mono text-[11px] uppercase tracking-[0.2em] text-copper-400">Phone</p>
-						<p className="mt-3 text-lg text-paper-50">{profile.phone}</p>
-					</div>
-					<Phone className="text-paper-400 transition-colors group-hover:text-copper-300" size={20} />
-				</a>
-			</div>
-
-			<div className="mt-8 flex flex-wrap gap-4">
-				<a href={profile.resumeUrl} download className="inline-flex items-center gap-2 border border-paper-50/20 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-paper-50 transition-colors hover:border-copper-400 hover:text-copper-300">
-					<Download size={14} />
-					Download resume
-				</a>
-				<a href={`mailto:${profile.email}?subject=Hello%20Darrell`} className="inline-flex items-center gap-2 bg-paper-50 px-5 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-ink-950 transition-colors hover:bg-copper-300">
-					Send an email
-					<ArrowUpRight size={14} />
-				</a>
+				</Reveal>
 			</div>
 		</section>
 	);
