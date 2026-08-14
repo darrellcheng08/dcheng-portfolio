@@ -41,12 +41,20 @@ export function About() {
 										{item.title} ({item.year})
 									</p>
 								))}
-								<div className="mt-4 flex flex-wrap gap-1.5">
+							</div>
+							<div className="glass-card rounded-2xl p-6">
+								<h3 className="text-sm font-semibold text-ink">Languages</h3>
+								<div className="mt-3 flex flex-wrap gap-1.5">
 									{profile.languages.map((lang) => (
 										<Tag key={lang} tone="accent">
 											{lang}
 										</Tag>
 									))}
+								</div>
+							</div>
+							<div className="glass-card rounded-2xl p-6">
+								<h3 className="text-sm font-semibold text-ink">Interested in</h3>
+								<div className="mt-3 flex flex-wrap gap-1.5">
 									{profile.interests.map((interest) => (
 										<Tag key={interest}>{interest}</Tag>
 									))}
